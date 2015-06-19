@@ -1,8 +1,73 @@
 \section{Loop Objects in Pointed Derivators (Aras Ergus)}
 
-Derivators provide an abstract framework for homotopy
+\textbf{TL;DR:} \emph{Derivators provide an abstract framework for homotopy
 theory. In particular, many statements from (classical) homotopy theory
 can be formulated and proven for certain kinds of derivators. My thesis
 is about one such statement, namely a ``derivator version'' of the fact that
 the loop spaces have a canonical group object structure in the homotopy
-category of topological spaces.
+category of pointed topological spaces.}
+
+In some fields of mathematics, especially in homotopy theory and
+homological algebra, one wants to see certain kinds of morphisms
+(week equivalences or homotopy equivalences of topological spaces
+in the first case, quasi-isomorphisms of chain complexes in the second
+case) as isomorphisms. Given a category $\mathbf{C}$ and a class $W$
+of ``weak equivalences'' which one wants to see as isomorphisms,
+one can, in certain cases which include the ones above, construct the
+``homotopy category'' $W^{-1}\mathbf{C}$ equipped with a functor
+$Q \colon \mathbf{C} \to W^{-1}\mathbf{C}$ such that $Q(f)$ is
+an isomorphism whenever $f \in W$ and $(W^{-1}\mathbf{C}, Q)$ is
+universal with this property.
+
+A question one could ask in this situation is whether $W^{-1}\mathbf{C}$
+has all (co)limits if $\mathbf{C}$ does. The answer to this
+question turns out to be negative in most non-trivial cases.
+
+In order to find a replacement for (co)limits in $W^{-1}\mathbf{C}$
+one considers the following alternative description of (co)limits:
+Given a small category $A$ and a category $\mathbf{C}$ which has all limits
+and colimits, there are adjunctions
+\[
+\Delta \colon \mathbf{C} \leftrightarrows \mathbf{C}^A \colon \lim
+\quad \text{and} \quad
+\operatorname{colim} \colon \mathbf{C}^A \leftrightarrows
+\mathbf{C} \colon \Delta,
+\]
+where $\mathbf{C}^A$ is the category of functors from $A$ to $\mathbf{C}$
+with natural transformations as morphisms and
+$\Delta \colon \mathbf{C} \to \mathbf{C}^A$ is the ``constant diagram
+functor'' which maps each object $c$ of $\mathbf{C}$ to the functor which is
+contantly $c$ on objects of $A$ and constantly $\operatorname{id}_c$ on
+morphisms in $A$.
+
+Now the idea is to replace $(W^{-1}\mathbf{C})^A$ by
+$W_A^{-1}(\mathbf{C}^A)$, where $W_A$ is the class of morphisms in
+$\mathbf{C}^A$ (i.\,e.\ natural transformations) whose all components lie in
+$W$. This distinction between ``diagrams in the homotopy category'' and
+''diagrams up to pointwise weak equivalences'' turns out to be very important
+and one in fact does have adjunctions
+\[
+\Delta^{\mathrm{h}} \colon W^{-1}\mathbf{C} \leftrightarrows
+W_A^{-1}(\mathbf{C}^A) \colon \operatorname{holim}
+\quad \text{and} \quad
+\operatorname{hocolim} \colon W_A^{-1}(\mathbf{C}^A) \leftrightarrows
+W^{-1}\mathbf{C} \colon \Delta^{\mathrm{h}}
+\]
+if $\mathbf{C}$ has all limits and colimits, where
+$\Delta^{\mathrm{h}} \colon W^{-1}\mathbf{C} \to W_A^{-1}(\mathbf{C}^A)$ is
+again a ``constant diagram functor'' similar to the one above.
+
+From this point on many statements in homotopy theory and homological
+algebra can be shown purely formally using such adjunctions. The concept of a
+\emph{derivator} provides an axiomatization of this phenomenon
+which describes the totality of ``categories of coherent diagrams'' and
+certain adjunctions between those.
+
+For example, for a large class of derivators one can define a loop
+functor which corresponds to the loop space functor in the case of the
+homotopy theory of pointed topological spaces and to the shift functor
+in homological algebra. A well-known statement in homotopy theory
+is that loop spaces have a group object structure in the homotopy category
+(which is given by concatenation and inversion of loops). One can indeed
+show a ``derivator version'' of this statement, which is the topic
+of my thesis.
