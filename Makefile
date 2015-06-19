@@ -6,10 +6,10 @@ schedules: index.html schedule.pdf
 
 posters: poster-de.pdf poster-en.pdf
 
-index.html: index.tex content.tex
+index.html: index.tex content.tex abstract-*.tex
 	hevea index.tex && hevea index.tex
 
-schedule.pdf: schedule.tex content.tex
+schedule.pdf: schedule.tex content.tex abstract-*.tex
 	$(PDFLATEX) schedule.tex && $(PDFLATEX) schedule.tex
 
 poster-de.pdf: poster-de.tex
